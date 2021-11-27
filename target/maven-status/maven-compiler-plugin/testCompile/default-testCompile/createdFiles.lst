@@ -1,0 +1,14 @@
+ui\run\Hooks.class
+ui\entity\User.class
+ui\steps\LoginSteps.class
+ui\entity\User$UserBuilder.class
+ui\pages\BasePage.class
+ui\utils\DataGenerator.class
+ui\pages\LoginPage.class
+ui\pages\MainPage.class
+ui\steps\MainSteps.class
+ui\steps\NavigationSteps.class
+ui\steps\RegisterSteps.class
+ui\OpenCartTest.class
+ui\steps\BaseSteps.class
+ui\utils\DataHolder.class
