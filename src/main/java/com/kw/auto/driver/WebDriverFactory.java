@@ -1,13 +1,11 @@
 package com.kw.auto.driver;
 
-import lombok.extern.log4j.Log4j2;
 import org.openqa.selenium.WebDriver;
 
 import java.util.List;
 
 import static java.util.Arrays.asList;
 
-@Log4j2
 public final class WebDriverFactory {
 
     private final List<IDriverFactory> factories = asList(

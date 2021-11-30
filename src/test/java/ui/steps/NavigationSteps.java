@@ -3,13 +3,11 @@ package ui.steps;
 import com.kw.auto.driver.WebDriverRunner;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import lombok.extern.log4j.Log4j2;
 
 import static com.kw.auto.utils.PropertyUtils.*;
 import static java.lang.String.format;
 import static junit.framework.TestCase.assertTrue;
 
-@Log4j2
 public final class NavigationSteps extends BaseSteps {
 
   private static String getBaseUrl() {

@@ -10,12 +10,14 @@ import java.util.NoSuchElementException;
 
 import static org.junit.Assert.assertTrue;
 import static ui.utils.ElementUtils.click;
+import static ui.utils.UserWaitsForResult.timeout;
 public class CheckoutSteps extends BaseSteps {
   @Inject
   private CheckoutPage checkoutPage;
 
   @And("at Checkout page on Billing Details section user enters data")
   public void atCheckoutPageOnBillingDetailsSectionUserEntersData() {
+    timeout(1000);
     userEntersFirstName();
     userEntersLastName();
     userEntersAddress();
@@ -106,8 +108,8 @@ public class CheckoutSteps extends BaseSteps {
   }
 
   private void userChoosesCountry() {
-    checkoutPage.getCountryDropDownField().click();
-    checkoutPage.getCountry().click();
+    click(checkoutPage.getCountryDropDownField());
+    click(checkoutPage.getCountry());
   }
 
   private void userChoosesRegion() {
@@ -116,30 +118,37 @@ public class CheckoutSteps extends BaseSteps {
       checkoutPage.getRegion().click();
     } catch (NoSuchElementException e) {
       userChoosesCountry();
+      checkoutPage.getRegionInputPaymentField().click();
+      checkoutPage.getRegion().click();
     }
   }
 
   private void fillInFirstName(final String firstName) {
+    click(checkoutPage.getFirstNameInputPaymentField());
     checkoutPage.getFirstNameInputPaymentField().clear();
     checkoutPage.getFirstNameInputPaymentField().sendKeys(firstName);
   }
 
   private void fillInLastName(final String lastName) {
+    click(checkoutPage.getLastNameInputPaymentField());
     checkoutPage.getLastNameInputPaymentField().clear();
     checkoutPage.getLastNameInputPaymentField().sendKeys(lastName);
   }
 
   private void fillInAddress(final String address) {
+    click(checkoutPage.getAddressInputPaymentField());
     checkoutPage.getAddressInputPaymentField().clear();
     checkoutPage.getAddressInputPaymentField().sendKeys(address);
   }
 
   private void fillInCity(String city) {
+    click(checkoutPage.getCityInputPaymentField());
     checkoutPage.getCityInputPaymentField().clear();
     checkoutPage.getCityInputPaymentField().sendKeys(city);
   }
 
   private void fillInPostCode(String postCode) {
+    click(checkoutPage.getPostCodeInputPaymentField());
     checkoutPage.getPostCodeInputPaymentField().clear();
     checkoutPage.getPostCodeInputPaymentField().sendKeys(postCode);
   }

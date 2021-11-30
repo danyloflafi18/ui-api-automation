@@ -11,7 +11,7 @@ import java.util.Map;
 public class ChromeDriverFactory implements IDriverFactory {
     @Override
     public boolean supports(final DriverConfig config) {
-        return (config.remote == null || config.remote.isEmpty()) && config.browser.equals("chrome");
+        return (config.browser.equals("chrome"));
     }
 
     @Override

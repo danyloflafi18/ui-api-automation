@@ -53,14 +53,13 @@ public class CheckoutPage extends BasePage {
     Random random = new Random();
     List<WebElement> countries = countryDropDownField
             .findElements(xpath("./option[not(@value='')]"));
-    return countries.get(random.nextInt(countries.size()));
+    return countries.get(random.nextInt(countries.size() - 1));
   }
 
   public WebElement getRegion() {
-    return regionInputPaymentField
-            .findElements(xpath("./option[not(@value='') and not(@value='0')]"))
-            .stream()
-            .findAny()
-            .get();
+    Random random = new Random();
+    List<WebElement> regions = regionInputPaymentField
+            .findElements(xpath("./option[not(@value='') and not(@value='0')]"));
+    return regions.get(random.nextInt(regions.size() - 1));
   }
 }

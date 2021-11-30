@@ -2,13 +2,10 @@ package ui.steps;
 
 import com.google.inject.Inject;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import ui.pages.AfterLogoutPage;
-import ui.pages.LoginPage;
 import ui.pages.header.HeaderPanel;
 
-import static org.junit.Assert.assertTrue;
+import static ui.utils.ElementUtils.click;
 
 public class HeaderSteps extends BaseSteps {
   @Inject
@@ -25,7 +22,7 @@ public class HeaderSteps extends BaseSteps {
   }
 
   private void clickOnItemFromHeaderPanelSection(String itemFromHeaderPanel) {
-    headerPanel.getHeaderPanelItem(itemFromHeaderPanel).click();
+    click(headerPanel.getHeaderPanelItem(itemFromHeaderPanel));
   }
 
   @And("at Header Panel user clicks on {string} section")

@@ -5,8 +5,6 @@ import com.kw.auto.driver.WebDriverRunner;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.FluentWait;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import ui.entity.User;
@@ -15,12 +13,7 @@ import ui.utils.JavaScriptProvider;
 
 import java.time.Duration;
 
-import static com.kw.auto.driver.WebDriverRunner.getWebDriver;
-import static org.openqa.selenium.Keys.ARROW_RIGHT;
-import static org.openqa.selenium.Keys.BACK_SPACE;
-
 public abstract class BaseSteps {
-    static final int SHORT_WAIT = 5;
     static final int MEDIUM_WAIT = 20;
     static final int POLLING_TIME = 300;
     private static final ThreadLocal<DataHolder> THREAD_LOCAL_DATA_HOLDER = new ThreadLocal<>();

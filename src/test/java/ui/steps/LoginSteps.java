@@ -2,13 +2,8 @@ package ui.steps;
 
 import com.google.inject.Inject;
 import io.cucumber.java.en.And;
-import io.cucumber.java.en.When;
 import ui.entity.User;
-import ui.pages.AfterLoginPage;
 import ui.pages.LoginPage;
-import ui.pages.header.HeaderPanel;
-
-import static org.junit.Assert.assertTrue;
 
 public final class LoginSteps extends BaseSteps{
 

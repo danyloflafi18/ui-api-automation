@@ -18,7 +18,7 @@ public final class ElementUtils {
     private static FluentWait<WebDriver> getFluentWait() {
         return new FluentWait<>(WebDriverRunner.getWebDriver())
                 .withTimeout(Duration.ofSeconds(20))
-                .pollingEvery(Duration.ofMillis(300))
+                .pollingEvery(Duration.ofMillis(600))
                 .ignoring(StaleElementReferenceException.class);
     }
 
